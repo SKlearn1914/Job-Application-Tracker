@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Application Tracker</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <header>
+        <h1>Job Application Tracker</h1>
+    </header>
+
+    <main>
+        <!-- Add Job Form -->
+        <section class="form-section">
+            <h2>Add New Job</h2>
+            <form id="jobForm">
+                <input type="text" id="jobTitle" placeholder="Job Title" required>
+                <input type="text" id="company" placeholder="Company Name" required>
+                <select id="status" required>
+                    <option value="">Select Status</option>
+                    <option value="Applied">Applied</option>
+                    <option value="Interview Scheduled">Interview Scheduled</option>
+                    <option value="Offer Received">Offer Received</option>
+                    <option value="Rejected">Rejected</option>
+                </select>
+                <input type="date" id="appliedDate" required>
+                <input type="date" id="interviewDate">
+                <button type="submit" class="btn"><i class="fa fa-plus"></i> Add Job</button>
+            </form>
+            <div class="import-section">
+                <label class="btn" for="importCSV"><i class="fa fa-file-csv"></i> Import CSV</label>
+                <input type="file" id="importCSV" accept=".csv" hidden>
+            </div>
+        </section>
+
+        <!-- Job List Table -->
+        <section class="table-section">
+            <h2>My Job Applications</h2>
+            <input type="text" id="searchInput" placeholder="Search by Job Title or Company...">
+            <div class="table-container">
+                <table id="jobTable">
+                    <thead>
+                        <tr>
+                            <th>Job Title</th>
+                            <th>Company</th>
+                            <th>Status</th>
+                            <th>Applied Date</th>
+                            <th>Interview Date</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Jobs will appear here -->
+                    </tbody>
+                </table>
+            </div>
+            <div class="export-buttons">
+                <button id="exportCSV" class="btn"><i class="fa fa-file-csv"></i> Export CSV</button>
+                <button id="exportPDF" class="btn"><i class="fa fa-file-pdf"></i> Export PDF</button>
+            </div>
+        </section>
+    </main>
+
+    <!-- JS -->
+    <script src="script.js"></script>
+    <!-- html2pdf library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <!-- Hidden container for PDF generation -->
+    <div id="pdfCloneContainer" style="position:absolute; top:-9999px; left:-9999px; width:210mm;"></div>
+
+</body>
+
+</html>

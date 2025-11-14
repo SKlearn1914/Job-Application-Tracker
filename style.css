@@ -1,0 +1,272 @@
+/* GENERAL RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background: url('https://source.unsplash.com/1600x900/?office,technology') no-repeat center center fixed;
+    background-size: cover;
+    color: #333;
+    min-height: 100vh;
+}
+
+/* HEADER */
+header {
+    background: rgba(0, 120, 212, 0.9);
+    color: #fff;
+    text-align: center;
+    padding: 1.5rem;
+    font-size: 2rem;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    animation: fadeInDown 1s ease;
+}
+
+/* MAIN */
+main {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding: 2rem;
+    justify-content: center;
+    animation: fadeIn 1.5s ease;
+}
+
+/* FORM SECTION */
+.form-section {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    flex: 1;
+    animation: slideInLeft 1s ease;
+}
+
+.form-section h2 {
+    color: #0078D4;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.form-section input,
+.form-section select {
+    width: 100%;
+    padding: 0.6rem 1rem;
+    margin-bottom: 0.8rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    transition: 0.3s;
+}
+
+.form-section input:focus,
+.form-section select:focus {
+    outline: none;
+    border-color: #0078D4;
+    box-shadow: 0 0 8px rgba(0, 120, 212, 0.3);
+}
+
+.btn {
+    background: linear-gradient(90deg, #0078D4, #00bfff);
+    color: #fff;
+    border: none;
+    padding: 0.7rem 1rem;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 100%;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+    background: linear-gradient(90deg, #005ea2, #0099cc);
+}
+
+.import-section {
+    margin-top: 0.5rem;
+    text-align: center;
+}
+
+.import-section label {
+    cursor: pointer;
+}
+
+/* TABLE SECTION */
+.table-section {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    max-width: 800px;
+    flex: 2;
+    animation: slideInRight 1s ease;
+}
+
+.table-section h2 {
+    color: #0078D4;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.table-section #searchInput {
+    width: 100%;
+    padding: 0.6rem 1rem;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+.table-container {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+th,
+td {
+    padding: 0.6rem 0.8rem;
+    border-bottom: 1px solid #ccc;
+}
+
+th {
+    background: #0078D4;
+    color: #fff;
+    position: sticky;
+    top: 0;
+}
+
+td .action-btn {
+    padding: 5px 10px;
+    margin: 0 2px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    font-size: 0.8rem;
+    color: #fff;
+    transition: 0.3s;
+}
+
+.edit-btn {
+    background: #ffa500;
+}
+
+.edit-btn:hover {
+    background: #ff8c00;
+}
+
+.delete-btn {
+    background: #ff4d4d;
+}
+
+.delete-btn:hover {
+    background: #e60000;
+}
+
+.status-Applied {
+    background: #e0f7ff;
+    color: #0078D4;
+    font-weight: bold;
+    padding: 2px 5px;
+    border-radius: 5px;
+}
+
+.status-Interview\ Scheduled {
+    background: #fff3cd;
+    color: #856404;
+    font-weight: bold;
+    padding: 2px 5px;
+    border-radius: 5px;
+}
+
+.status-Offer\ Received {
+    background: #d4edda;
+    color: #155724;
+    font-weight: bold;
+    padding: 2px 5px;
+    border-radius: 5px;
+}
+
+.status-Rejected {
+    background: #f8d7da;
+    color: #721c24;
+    font-weight: bold;
+    padding: 2px 5px;
+    border-radius: 5px;
+}
+
+.export-buttons {
+    margin-top: 1rem;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+/* ANIMATIONS */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@media screen and (max-width:768px) {
+    main {
+        flex-direction: column;
+    }
+
+    .table-section {
+        max-width: 100%;
+    }
+
+    .form-section {
+        max-width: 100%;
+    }
+}
